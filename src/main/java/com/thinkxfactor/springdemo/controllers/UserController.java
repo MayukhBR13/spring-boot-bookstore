@@ -28,6 +28,11 @@ public class UserController {
         return "The counter value is : " + count;
     }
 
+    @GetMapping("/abc")
+    public String asd() {
+        return "hi  ---------------------";
+    }
+
     @GetMapping("/hello")
     public String sayHello() {
         return "This is a new server running!!";
