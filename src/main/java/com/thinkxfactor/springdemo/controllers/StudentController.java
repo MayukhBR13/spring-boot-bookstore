@@ -25,7 +25,7 @@ public class StudentController {
     @Autowired
     StudentRepository studentRepository;
 
-    private ArrayList<Student> students=new ArrayList<Student>();
+    //private ArrayList<Student> students=new ArrayList<Student>();
 
 
     @GetMapping("/")
@@ -36,7 +36,7 @@ public class StudentController {
     @PostMapping("/addStudent")
     String addStudent(@RequestBody Student stu){
         Student pStu=studentRepository.save(stu);
-        students.add(pStu);
+    //    students.add(pStu);
         return pStu.toString();
     }
 

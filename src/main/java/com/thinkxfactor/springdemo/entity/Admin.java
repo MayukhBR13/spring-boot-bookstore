@@ -1,17 +1,25 @@
 package com.thinkxfactor.springdemo.entity;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import org.hibernate.annotations.GeneratorType;
+
+@Entity
+@Table(name="tlb_books")
 public class Admin {
-    private static int id_generator;
+    
+    @Id
+    @Column(name = "id")
+    @GeneratorValue
     private int id;
     private String name;
 
-    static{
-        id_generator=0;
-    }
-    Admin(){this.id=++id_generator;}
+    Admin(){}
     Admin(String name){
         this.name=name;
-        this.id=++id_generator;
     }
     public int getId(){
         return this.id;

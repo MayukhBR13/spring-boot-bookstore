@@ -1,21 +1,34 @@
 package com.thinkxfactor.springdemo.entity;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="tlb_books")
 public class Book {
-    private static int id_generator;
+
+    @Id
+    @GeneratedValue
+    @Column(name="id")
     private int id;
+
+    @Column(name = "name")
     private String name;
+
+    @Column(name = "isbn")
     private String isbn;
+
+    @Column(name = "authorName")
     private String authorName;
 
-    static{
-        id_generator=0;
-    }
-    Book(){this.id=++id_generator;}
+    Book(){}
     Book(String name,String isbn,String auName){
         this.name=name;
         this.isbn=isbn;
         this.authorName=auName;
-        this.id=++id_generator;
     }
     public int getId(){
         return this.id;
